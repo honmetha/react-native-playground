@@ -1,5 +1,5 @@
 import * as React from "react";
-import { StyleSheet, View, TextInput, Button } from "react-native";
+import { StyleSheet, View, TextInput, Button, Alert } from "react-native";
 
 export default function AddTodo({ submitHandler }) {
   const [text, setText] = React.useState("");
@@ -9,8 +9,17 @@ export default function AddTodo({ submitHandler }) {
   };
 
   const pressHandler = (text) => {
-    submitHandler(text);
-    setText("");
+    if (text.length > 3) {
+      submitHandler(text);
+      setText("");
+    } else {
+      Alert.alert("OOPS!", "Todos must be over 3 chars long", [
+        {
+          text: "Understood",
+          onPress: () => console.log("alert closed"),
+        },
+      ]);
+    }
   };
 
   return (
