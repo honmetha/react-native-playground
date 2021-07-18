@@ -1,14 +1,22 @@
 import * as React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { MaterialIcon } from "@expo/vector-icons";
-import { styleSheets } from "min-document";
+import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Header() {
+export default function Header({ navigation, title }) {
+  const openMenu = () => {
+    navigation.openDrawer();
+  };
+
   return (
     <View style={styles.header}>
-      {/* icon for the menu */}
+      <MaterialIcons
+        name="menu"
+        size={28}
+        onPress={openMenu}
+        style={styles.icon}
+      />
       <View>
-        <Text style={styles.headerText}>GameZone</Text>
+        <Text style={styles.headerText}>{title}</Text>
       </View>
     </View>
   );
@@ -16,7 +24,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
-    width: "100%",
+    minWidth: 414,
     height: "100%",
     flexDirection: "row",
     alignItems: "center",
@@ -28,6 +36,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#333",
     letterSpacing: 1,
+    color: "white",
+  },
+  icon: {
+    position: "absolute",
+    left: 16,
     color: "white",
   },
 });
