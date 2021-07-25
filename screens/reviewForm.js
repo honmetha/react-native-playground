@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, TextInput, View } from "react-native";
+import { Button, TextInput, View, Text } from "react-native";
 import { Formik } from "formik";
 import * as yup from "yup";
 
@@ -35,7 +35,11 @@ export default function ReviewForm({ addReview }) {
               onChangeText={props.handleChange("title")}
               value={props.values.title}
               placeholderTextColor={"gray"}
+              onBlur={props.handleBlur("title")}
             />
+            <Text style={globalStyles.errorText}>
+              {props.touched.title && props.errors.title}
+            </Text>
             <TextInput
               multiline
               style={globalStyles.input}
@@ -43,7 +47,11 @@ export default function ReviewForm({ addReview }) {
               onChangeText={props.handleChange("body")}
               value={props.values.body}
               placeholderTextColor={"gray"}
+              onBlur={props.handleBlur("body")}
             />
+            <Text style={globalStyles.errorText}>
+              {props.touched.body && props.errors.body}
+            </Text>
             <TextInput
               style={globalStyles.input}
               placeholder="Rating (1-5)"
@@ -51,7 +59,11 @@ export default function ReviewForm({ addReview }) {
               value={props.values.rating}
               keyboardType="numeric"
               placeholderTextColor={"gray"}
+              onBlur={props.handleBlur("rating")}
             />
+            <Text style={globalStyles.errorText}>
+              {props.touched.rating && props.errors.rating}
+            </Text>
             <Button title="submit" color="blue" onPress={props.handleSubmit} />
           </View>
         )}
