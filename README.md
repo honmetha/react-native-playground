@@ -1,5 +1,7 @@
 # React Native Tutorial
 
+<img src="./uploads/demo.png" alt="Demo" width="300">
+
 ## 📖 Chapters
 
 1. Introduction
