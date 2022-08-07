@@ -1,6 +1,8 @@
+# React Native Playground
+
 # React Native Tutorial
 
-<img src="./uploads/demo.png" alt="Demo" width="300">
+<img src="./images/demo.png" alt="Demo" width="300">
 
 ## 📖 Chapters
 
