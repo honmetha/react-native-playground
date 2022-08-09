@@ -1,5 +1,7 @@
 # React Native Playground
 
+This is a play area for React Native
+
 # React Native Tutorial
 
 <img src="./images/demo.png" alt="Demo" width="300">
